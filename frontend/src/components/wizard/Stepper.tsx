@@ -8,8 +8,9 @@ export function Stepper({ current, labels }: { current: number; labels: string[]
         const step = i + 1;
         const done = step < current;
         const active = step === current;
+        const itemKey = `${text}-${i}`;
         return (
-          <li key={text} className="flex flex-1 flex-col items-center gap-2 text-center" aria-current={active ? 'step' : undefined}>
+          <li key={itemKey} className="flex flex-1 flex-col items-center gap-2 text-center" aria-current={active ? 'step' : undefined}>
             <div className="flex w-full items-center">
               <div className={cn('h-0.5 flex-1', i === 0 ? 'bg-transparent' : done || active ? 'bg-indigo-600' : 'bg-slate-200')} />
               <div
